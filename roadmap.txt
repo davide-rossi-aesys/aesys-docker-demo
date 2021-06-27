@@ -1,0 +1,33 @@
+1. Breve introduzione, tuffo nel passato
+
+- (che vuol dire "deployare" un'applicazione)
+- sviluppare in locale
+- environment hell (it works on my machine)
+- virtualizzazione tramite VM, pro e contro
+
+2. I container
+
+- differenze con le VM, pregi e difetti
+- La crescente diffusione dei container
+    ( Microservizi, cloud )
+- differenza tra immagini e container
+
+
+
+3. Docker
+
+- La popolarità di Docker
+    https://insights.stackoverflow.com/survey/2020#technology-platforms-all-respondents5
+    https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-platforms-wanted5
+
+- Installazione di docker/docker-desktop
+- Rapida demo (container nginx home page)
+- Interazione con il container (
+    - bash interattiva
+    - start-stop
+    - apertura porta alternativa
+    - mount di un volume nel path di nginx con modifica "live" della pagina in una rotta custom  
+    )
+- Dockerfile, gerarchia delle immagini e direttive base
+
+
