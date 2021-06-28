@@ -29,5 +29,6 @@
     - mount di un volume nel path di nginx con modifica "live" della pagina in una rotta custom  
     )
 - Dockerfile, gerarchia delle immagini e direttive base
+- Dockerhub, e i container registries
 
 

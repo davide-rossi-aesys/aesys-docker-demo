@@ -1,1 +1,74 @@
-<h1> Utenti! <h1/>
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Demo Docker!! </title>
+    <link rel="stylesheet" href="/demo-style.css">
+    <meta name="description" content="Our first page">
+    <meta name="keywords" content="html tutorial template">
+</head>
+
+<body>
+    <h1> Gestione Utenti! </h1>
+    <div>
+        <div>
+            <a href="/utenti/crea.html">
+                <button> crea un utente!</button>
+            </a>
+        </div>
+        <div>
+            <button id="seeUsers" onclick="visualizzaUtenti()"> visualizza gli utenti!</button>
+        </div>
+    </div>
+    <div>
+        <table id="tabellaUtenti">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Username</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <pre>
+
+    </pre>
+
+    <script>
+        function visualizzaUtenti() {
+            fetch('http://localhost:8888/users').then(function (response) {
+                return response.json();
+            }).then(function (json) {
+                let users = json;
+                initialize(users);
+            }).catch(function (err) {
+                console.log('Fetch problem: ' + err.message);
+            });
+        };
+
+
+
+        function initialize(users) {
+            var new_tbody = document.createElement('tbody');
+
+            users.forEach(user => {
+                var newRow = new_tbody.insertRow();
+                newRow.insertCell().appendChild(document.createTextNode(user.id));
+                newRow.insertCell().appendChild(document.createTextNode(user.email))
+                newRow.insertCell().appendChild(document.createTextNode(user.username))
+            });
+            var old_tbody = document.getElementById('tabellaUtenti').getElementsByTagName('tbody')[0];
+            old_tbody.parentNode.replaceChild(new_tbody, old_tbody)
+        }
+    </script>
+</body>
+
+</html>

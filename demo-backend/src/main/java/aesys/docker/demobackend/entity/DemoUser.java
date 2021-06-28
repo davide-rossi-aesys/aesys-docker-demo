@@ -1,4 +1,4 @@
-package aesys.entity;
+package aesys.docker.demobackend.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -17,11 +18,11 @@ public class DemoUser {
     private long id;
 
     @Email(message = "Email should be valid")
-    @Column(name="EMAIL", length=50, nullable=false, unique=false)
+    @Column(name="EMAIL", length=50, nullable=false, unique=true)
     private String email;
 
-    @NotNull(message = "Name cannot be null")
-    @Column(name="USERNAME", length=50, nullable=false, unique=false)
+    @NotEmpty(message = "Il campo username è obbligatorio")
+    @Column(name="USERNAME", length=50, nullable=false, unique=true)
     private String username;
 
     public long getId() {
