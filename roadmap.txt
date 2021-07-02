@@ -8,9 +8,9 @@
 2. I container
 
 - differenze con le VM, pregi e difetti
-- La crescente diffusione dei container
-    ( Microservizi, cloud )
 - differenza tra immagini e container
+- La crescente diffusione dei container
+    ( Microservizi, cloud, automation )
 
 
 
