@@ -62,8 +62,8 @@
             users.forEach(user => {
                 var newRow = new_tbody.insertRow();
                 newRow.insertCell().appendChild(document.createTextNode(user.id));
-                newRow.insertCell().appendChild(document.createTextNode(user.email))
-                newRow.insertCell().appendChild(document.createTextNode(user.username))
+                newRow.insertCell().appendChild(document.createTextNode(user.email));
+                newRow.insertCell().appendChild(document.createTextNode(user.username));
             });
             var old_tbody = document.getElementById('tabellaUtenti').getElementsByTagName('tbody')[0];
             old_tbody.parentNode.replaceChild(new_tbody, old_tbody)
