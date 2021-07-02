@@ -35,11 +35,10 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     environment:
-      - POSTGRES_USER="demo-user"
-      - POSTGRES_PASSWORD="demo-password"
-      - POSTGRES_DB="demo"
-      - POSTGRES_HOST_AUTH_METHOD="trust"
-
+      - POSTGRES_USER=demo-user
+      - POSTGRES_PASSWORD=demo-password
+      - POSTGRES_DB=demo
+      
   demo-database-frontend:
     image: dpage/pgadmin4
     container_name: pgadmin4
